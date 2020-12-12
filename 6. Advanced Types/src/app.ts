@@ -21,15 +21,42 @@ type Numeric = number | boolean;
 
 type Universal = Combinable & Numeric; // Intersection Types
 
+// Function Overloads
+function add( a: number, b: number ): number;
+function add( a: string, b: string ): string;
+function add( a: string, b: number ): string;
+function add( a: number, b: string ): string;
 function add( a: Combinable, b: Combinable ) {
     if ( typeof a === 'string' || typeof b === 'string' ) {
         return a.toString() + ' ' + b.toString();
     }
     return a + b;
-}
+};
+
+const result = add( 'Cristian', 'Delcid' );
+result.split(' ');
 
 console.log( add( 'Hola', 'Mundo' ) );
 console.log( add( 4, 29 ) );
+
+const fetchedUserData = {
+    id: '1234',
+    name: 'Cristian',
+    job: {
+        title: 'CEO',
+        description: 'My own company'
+    }
+};
+// Optional chaining
+console.log( fetchedUserData?.job?.title );
+
+// Nullish Coalesing
+const user = undefined;
+
+// const storedData = user || 'DEFAULT';
+const storedData = user ?? 'DEFAULT';
+
+console.log( storedData );
 
 type UnknownEmployee = Employee | Admin;
 
