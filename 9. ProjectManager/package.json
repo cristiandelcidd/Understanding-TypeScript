@@ -1,0 +1,16 @@
+{
+  "name": "drag-and-drop-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Cristian Delcid",
+  "license": "MIT",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "typescript": "^4.1.5"
+  }
+}
